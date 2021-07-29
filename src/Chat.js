@@ -3,21 +3,24 @@ import { FaMediumM } from "react-icons/fa";
 import logo192 from './images/logo192.png'
 import picture from './images/picture.jpg'
 import MessageBar from './MessageBar';
+import './Bar.css';
+import {barStyle} from './NavBar'
 
 
 function Chat() {
   const pict = require('./images/logo192.png');
   return (
-    <>
+    <>  
       < Box
-        width='75%'
+        width='64.7%'
         height='inherit'
         display='flex'
         position='absolute'
         backgroundColor='rgb(229, 221, 213)'
         align-self='end'
+        marginLeft='25%'
       >
-        <div style={{ width: '100%',
+        <div className='Bar' style={{ width: '100%',
          position: 'absolute',
          backgroundColor: '#ededed',
          borderStyle: 'solid',
@@ -32,9 +35,9 @@ function Chat() {
              borderColor: '#00800017',
              marginTop: '5px',
              marginLeft:'10px' }} ></img>
-            <div style ={{display:'flex', flexDirection:'column',marginLeft : '70px',marginTop :'15px', height:'inherit' ,width: '30%',alignSelf:'center'}}>Contact Name</div>
+            <div style ={{display:'flex', flexDirection:'column',marginLeft : '70px',marginTop :'15px', height:'inherit' ,width: '30%',alignSelf:'center'}}>Maryam </div>
         </div>
-        <div className='EndBar' style ={{ width: '100%',
+        <div className='Bar' style ={{ width: '100%',
           position: 'absolute',
           backgroundColor: '#ededed',
           borderStyle: 'solid',

@@ -12,8 +12,8 @@ export default function Main() {
     <>
       <div style={{ backgroundColor: '#dddbd1', height: 'inherit', width: 'inherit' }} >
       
-        <NavBar/>
-        <Chat style = {{marginLeft: '25%'}}/> 
+        <NavBar />
+        <Chat /> 
       </div>
     </>
   );

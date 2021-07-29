@@ -1,0 +1,9 @@
+.Bar{
+    width: '100%';
+         position: 'absolute';
+         background-color: '#ededed';
+         border-style: 'solid';
+         border-color: '#0000000d';
+         height: '58px';
+         text-align: 'left';
+}
