@@ -1,5 +1,3 @@
-import Box from '@material-ui/core/Box';
-
 
 function Background(props) {
   return (

@@ -1,63 +1,80 @@
-const barStyle = { width: '100%',
-position: 'absolute',
-backgroundColor: '#ededed',
-borderStyle: 'solid',
-borderColor: '#0000000d',
-height: '58px',
-textAlign: 'left',
+const barStyle ={width:'100%',
+flex:1, 
+backgroundColor: '#ededed',border:  '2px #0000000d',
+display: 'flex',
+flexDirection:'row'
 };
+
 
 exports.barStyle = barStyle;
 
-const imgStyle = { position: 'absolute', 
-borderRadius: '20px', 
-height: "40px", 
-borderStyle: "solid",
-borderColor: '#00800017',
-marginTop: '5px',
-marginLeft:'8px' };
+const imgStyle ={borderRadius:'30px',
+width:'40px',
+height:'45px',
+padding:'10px',
+borderColor:'#80808069'};
 
 exports.imgStyle =imgStyle;
 
-const notBar = {...barStyle,
-    backgroundColor: 'rgb(157,225,254)',
-    height: '100px',
-    marginTop: '60px', width :'99%'
-  };
-  
+const notBar = {display :'flex',
+width:'100%',flex:1.5, 
+justifyContent:'end', 
+flexDirection:'row', 
+backgroundColor: 'rgb(157,225,254)',
+borderStyle: 'solid',
+borderColor: '#0000000d'};
+
 exports.notBar= notBar;
 
-const iconStyle = { position:'absolute',
-width:'25px',
+const notbarIcon= {color : 'rgb(157,225,254)',
+backgroundColor:'white', alignSelf: 'center',
+marginLeft: '5%',
+borderRadius:'60px', width:'30px',
+height:'35px',
+padding : '10px'};
+  
+exports.notbarIcon= notbarIcon;
+
+const iconStyle ={ width:'25px',
 height:'25px',
-color :'grey',
-borderStyle:'solid',
-borderColor:'transparent',
-borderRadius:'2px'
-};
-exports.iconStyle= iconStyle;
-
-const notIcon = {color:'rgb(157,225,254)',
-backgroundColor:'white', 
-width:'25px', height:'25px',
-borderRadius:'30px',
-marginTop:'30px', marginLeft:'7%'};
-
-exports.notIcon= notIcon;
-
-const textStyle ={position:'absolute',
-display:'flex', direction:'column', left:'58px'
+paddingTop:'20px',
+paddingLeft: '8%',
+color:'grey',
 };
 
-exports.textStyle = textStyle;
+exports.iconStyle=iconStyle;
 
-const contactStyle = {display:'flex',
-flexDirection:'column',
-marginLeft : '70px',
-marginTop :'15px',
-height:'inherit' ,
-width: '30%',
-alignSelf:'center'};
+const msgbarIcon = { width:'25px',
+height:'25px',
+color:'grey',
+alignSelf:'center',
+paddingLeft:'10px'
+}
 
-exports.contactStyle=contactStyle;
+exports.msgbarIcon=msgbarIcon;
 
+const msgBarStyle = {width:'inherit',
+ borderRadius:'20px',
+ border:'2px solid #80808069',
+ alignSelf:'center',
+ paddingLeft:'5px',
+ paddingRight:'5px'};
+
+ exports.msgBarStyle=msgBarStyle;
+
+ const contactStyle = {fontSize: '15px',
+ textAlign:'left', 
+ color:'black', 
+ padding: '2px',
+ margin: '10px',
+ fontWeight:'bold'};
+
+ exports.contactStyle=contactStyle;
+
+ const lastseenStyle ={fontSize:'11px',
+ color:'grey',
+ alignSelf:'center',
+ margin:'10px',
+ textAlign:'start'};
+
+ exports.lastseenStyle=lastseenStyle;
