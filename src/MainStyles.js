@@ -78,3 +78,25 @@ const msgBarStyle = {width:'inherit',
  textAlign:'start'};
 
  exports.lastseenStyle=lastseenStyle;
+
+ const emojiBarStyle = {display :'flex',
+ width:'inherit', 
+ height:'inherit', 
+ backgroundColor:'#ededed', 
+ zIndex:'4', 
+ flexDirection:'row',
+ justifyContent: 'end',
+ border :'2px #80808069s'};
+
+ exports.emojiBarStyle =emojiBarStyle;
+
+ const attachIconStyle = {height :'25px',
+ width:'25px', 
+ padding:'15px',
+ color:'white',
+ borderRadius:'37px',
+ margin :'5px',
+ marginLeft: '11px'};
+
+exports.attachIconStyle = attachIconStyle;
+

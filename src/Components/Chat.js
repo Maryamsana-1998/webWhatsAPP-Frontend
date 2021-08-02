@@ -1,26 +1,61 @@
 import Contact from './Contact';
 import MessageBar from './MessageBar';
+import React from 'react';
+import EmojiBar from './EmojiBar';
+import AttachBar from './AttachBar';
 
-function Chat(props) {
-  var mystyle = require('../MainStyles');
-  const barStyle = mystyle.barStyle;
 
-  return (
+class Chat extends React.Component {
+  constructor(props) {
+    super(props)
+    this.mystyle = require('../MainStyles');
+    this.state = {
+      displayEmoji: false,
+      displayAttach: false,
+    }
+  }
 
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }} >
+  handleEMojiClick = () => {
+    this.setState({
+      displayEmoji: true,
+      displayAttach: false,
+    })
+    console.log('emoji clicked');
+  }
 
-      <div style={{ display: 'flex', flexDirection: 'row', flex: 1, ...barStyle }}>
-        <Contact></Contact>
-      </div>
+  handleAttachClick = () => {
+    this.setState({
+      displayEmoji: false,
+      displayAttach: true,
+    })
+    console.log('attach clicked');
+  }
 
-      <div style={{ flex: 10.5 }}></div>
+  render() {
+    return (
 
-      <div style={{ display: 'flex', flexDirection: 'row', flex: 1, ...barStyle }}>
-        <MessageBar></MessageBar>
-      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }} >
 
-    </ div>
-  );
+        <div style={{ display: 'flex', flexDirection: 'row', flex: 1, ...this.mystyle.barStyle }}>
+          <Contact></Contact>
+        </div>
+
+        <div style={{ flex: 10.5, display: 'flex', flexDirection: 'column' }}>
+          <div style={{ flex: 7 }}></div>
+          {this.state.displayAttach &&  <AttachBar></AttachBar>}
+          {this.state.displayEmoji && <div style={{ flex: 3, ...this.mystyle.emojiBarStyle }}>
+            {this.state.displayEmoji && <EmojiBar></EmojiBar>}
+          </div>}
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'row', flex: 1, ...this.mystyle.barStyle }}>
+          <MessageBar emoji={this.handleEMojiClick} attach={this.handleAttachClick} ></MessageBar>
+        </div>
+
+      </ div>
+    );
+  }
+
 }
 
 export default Chat;

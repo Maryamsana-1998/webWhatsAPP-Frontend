@@ -1,6 +1,7 @@
 import { BiMessage, BiDotsVerticalRounded } from "react-icons/bi";
 import { IoIosNotificationsOff } from "react-icons/io"
 import zainab from '../images/zainab.jpg'
+import NavChat from "./NavChat";
 
 export default function NavBar(props) {
 
@@ -27,7 +28,10 @@ export default function NavBar(props) {
         </div>
       </div>
 
-      <div style={{ width: '100%', flex: 10 }}></div>
+      <div style={{ width: '100%', flex: 10 ,flexDirection: 'column'}}>
+        <NavChat style ={{flex:1, width:'inherit', height:'40px',backgroundColor: 'red'}}></NavChat>
+        <div style ={{flex:8}}></div>
+      </div>
 
     </div>
 
