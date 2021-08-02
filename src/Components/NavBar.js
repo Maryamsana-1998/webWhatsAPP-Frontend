@@ -28,9 +28,9 @@ export default function NavBar(props) {
         </div>
       </div>
 
-      <div style={{ width: '100%', flex: 10 ,flexDirection: 'column'}}>
-        <NavChat style ={{flex:1, width:'inherit', height:'40px',backgroundColor: 'red'}}></NavChat>
-        <div style ={{flex:8}}></div>
+      <div style={{flex: 10 ,display:'flex', flexDirection: 'column'}}>
+        <NavChat ></NavChat>
+       
       </div>
 
     </div>
