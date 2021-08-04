@@ -1,9 +1,8 @@
-import {HiEmojiSad, HiEmojiHappy} from 'react-icons/hi'
+
 import Picker from 'emoji-picker-react';
 import {useState} from 'react';
 
 const EmojiBar=()=>{
-    var mystyle = require('../MainStyles');
     const [chosenEmoji, setChosenEmoji] = useState(null);
 
     const onEmojiClick = (event, emojiObject) => {

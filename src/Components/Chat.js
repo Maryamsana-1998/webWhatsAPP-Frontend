@@ -1,61 +1,68 @@
 import Contact from './Contact';
 import MessageBar from './MessageBar';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import EmojiBar from './EmojiBar';
 import AttachBar from './AttachBar';
+import useFetch from '../useFetch'
+import { mainStyle } from './styles/NavbarStyles';
 
+const Chat = (props) => {
+  const mystyle = require('../MainStyles');
+  const chstyle = require('./styles/chatStyles');
+  const [name, setName] = useState(' ');
+  const [seen, setSeen] = useState(' ');
+  const [displayEmoji, setEmoji] = useState(false);
+  const [displayAttach, setAttach] = useState(false);
 
-class Chat extends React.Component {
-  constructor(props) {
-    super(props)
-    this.mystyle = require('../MainStyles');
-    this.state = {
-      displayEmoji: false,
-      displayAttach: false,
+  const { data: contact, error, isPending } = useFetch(' http://localhost:8000/chats/' + props.id);
+
+  useEffect(() => {
+    console.log('chat changed')
+    console.log(contact)
+    if (contact !== null) {
+      setSeen(contact.lastseen)
+      setName(contact.title)
     }
-  }
+  }, [props.id, contact])
 
-  handleEMojiClick = () => {
-    this.setState({
-      displayEmoji: true,
-      displayAttach: false,
-    })
+  const handleEMojiClick = () => {
+    setEmoji(!displayEmoji);
+    setAttach(false);
     console.log('emoji clicked');
   }
 
-  handleAttachClick = () => {
-    this.setState({
-      displayEmoji: false,
-      displayAttach: true,
-    })
+  const handleAttachClick = () => {
+    setAttach(!displayAttach);
+    setEmoji(false);
     console.log('attach clicked');
   }
 
-  render() {
-    return (
+  return (
 
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }} >
+    <div style={chstyle.mainStyle} >
 
-        <div style={{ display: 'flex', flexDirection: 'row', flex: 1, ...this.mystyle.barStyle }}>
-          <Contact></Contact>
-        </div>
+      <div style={chstyle.contbar}>
+        <Contact name={name} lastseen={seen}></Contact>
+      </div>
 
-        <div style={{ flex: 10.5, display: 'flex', flexDirection: 'column' }}>
-          <div style={{ flex: 7 }}></div>
-          {this.state.displayAttach &&  <AttachBar></AttachBar>}
-          {this.state.displayEmoji && <div style={{ flex: 3, ...this.mystyle.emojiBarStyle }}>
-            {this.state.displayEmoji && <EmojiBar></EmojiBar>}
-          </div>}
-        </div>
+      <div style={chstyle.chat}>
 
-        <div style={{ display: 'flex', flexDirection: 'row', flex: 1, ...this.mystyle.barStyle }}>
-          <MessageBar emoji={this.handleEMojiClick} attach={this.handleAttachClick} ></MessageBar>
-        </div>
+        <div style={{ flex: 7 }}></div>
 
-      </ div>
-    );
-  }
+        {displayAttach && <AttachBar></AttachBar>}
 
+        {displayEmoji && <div style={mystyle.emojiBarStyle}>
+          <EmojiBar></EmojiBar>
+        </div>}
+
+      </div>
+
+      <div style={chstyle.msgbar}>
+        <MessageBar emoji={handleEMojiClick} attach={handleAttachClick} ></MessageBar>
+      </div>
+
+    </ div>
+  );
 }
 
 export default Chat;

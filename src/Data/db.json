@@ -1,0 +1,22 @@
+{
+    "chats": [
+        {
+            "title": "Maryam",
+            "lastseen": "12:30am",
+            "picture": "../images/picture.jpg",
+            "id": 1
+        },
+        {
+            "title": "Beena",
+            "lastseen": "2:45 pm",
+            "picture": "../images/beena.jpg",
+            "id": 2
+        },
+        {
+            "title": "Fatima",
+            "lastseen": "5:20 pm",
+            "picture": "../images/fatima.jpg",
+            "id": 3
+        }
+    ]
+}

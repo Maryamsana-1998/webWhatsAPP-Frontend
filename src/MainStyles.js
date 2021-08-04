@@ -44,24 +44,6 @@ color:'grey',
 
 exports.iconStyle=iconStyle;
 
-const msgbarIcon = { width:'25px',
-height:'25px',
-color:'grey',
-alignSelf:'center',
-paddingLeft:'10px'
-}
-
-exports.msgbarIcon=msgbarIcon;
-
-const msgBarStyle = {width:'inherit',
- borderRadius:'20px',
- border:'2px solid #80808069',
- alignSelf:'center',
- paddingLeft:'5px',
- paddingRight:'5px'};
-
- exports.msgBarStyle=msgBarStyle;
-
  const contactStyle = {fontSize: '15px',
  textAlign:'left', 
  color:'black', 
@@ -99,4 +81,30 @@ const msgBarStyle = {width:'inherit',
  marginLeft: '11px'};
 
 exports.attachIconStyle = attachIconStyle;
+
+const navChatStyle = { display: 'flex', 
+flexDirection: 'row', 
+width: 'inherit', 
+height: '65px', 
+backgroundColor: '#ededed',
+borderBottomStyle:'1px solid black'};
+
+exports.navChatStyle =navChatStyle;
+
+const backdropStyle = { display: 'flex', 
+height: '100%' , 
+justifyContent :'center' , 
+backgroundColor: '#f8f9fa' , 
+flexDirection:'column'};
+
+exports.backdropStyle =backdropStyle;
+
+const backdropimgStyle = {flex:2.5,
+height:'180px', 
+width :"350px", 
+marginTop:'80px', 
+borderRadius:'500px', 
+alignSelf:'center'};
+
+exports.backdropimgStyle = backdropimgStyle; 
 
