@@ -2,6 +2,7 @@ import Navprofile from './Navprofile';
 import { IoIosNotificationsOff } from "react-icons/io"
 import {useState} from 'react';
 import {connect} from 'react-redux';
+import SettingBar from './SettingBar';
 
 const Navsub = (props) => {
     const mystyle = require('../MainStyles');
@@ -27,16 +28,7 @@ const Navsub = (props) => {
                     <p style={{ fontSize: '14px' }}>Turn on Desktop notifications</p>
                 </div>
 
-                {props.display && 
-                    <div style={navstyle.settingbar}>
-                        <p style ={navstyle.txtstyle}>New Group</p>
-                        <p style ={navstyle.txtstyle}>Settings</p>
-                        <p style ={navstyle.txtstyle}>Starred</p>
-                        <p style ={navstyle.txtstyle}>Create Room</p>
-                        <p style ={navstyle.txtstyle}>Profile</p>
-                        
-                    </div>
-                }
+                {props.display && <SettingBar></SettingBar>}
             </div>
         </>
     );
