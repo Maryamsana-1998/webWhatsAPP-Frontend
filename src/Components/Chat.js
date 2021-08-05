@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import EmojiBar from './EmojiBar';
 import AttachBar from './AttachBar';
 import useFetch from '../useFetch'
-import { mainStyle } from './styles/NavbarStyles';
+
 
 const Chat = (props) => {
   const mystyle = require('../MainStyles');
@@ -41,7 +41,7 @@ const Chat = (props) => {
 
     <div style={chstyle.mainStyle} >
 
-      <div style={chstyle.contbar}>
+      <div style={mystyle.barStyle}>
         <Contact name={name} lastseen={seen}></Contact>
       </div>
 
@@ -57,7 +57,7 @@ const Chat = (props) => {
 
       </div>
 
-      <div style={chstyle.msgbar}>
+      <div style={mystyle.barStyle}>
         <MessageBar emoji={handleEMojiClick} attach={handleAttachClick} ></MessageBar>
       </div>
 

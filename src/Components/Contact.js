@@ -6,18 +6,17 @@ const Contact = (props) => {
     const mystyle = require('../MainStyles');
     return (
         <>
-            <div style={{ flex: 1 }}>
-                <img src={picture} alt="contact picture " style={mystyle.imgStyle}></img>
-            </div>
+ 
+            <img src={picture} alt="contact picture " style={mystyle.imgStyle}></img>
+           
 
-            <div style={{ flex: 13 }}>
+            <div style={{ flex: 1 }}>
                 <p style={mystyle.contactStyle}>{props.name}</p>
                 <p style={mystyle.lastseenStyle}>{props.lastseen}</p>
             </div>
 
-            <div style={{ flex: 1 }}>
-                <BiDotsVerticalRounded style={mystyle.iconStyle}></BiDotsVerticalRounded>
-            </div>
+            <BiDotsVerticalRounded style={mystyle.iconStyle}></BiDotsVerticalRounded>
+            
         </>
     );
 }

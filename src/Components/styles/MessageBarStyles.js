@@ -1,4 +1,4 @@
-const buttonStyle ={ flex: 1, border: '1px solid transparent' };
+const buttonStyle ={ border: '1px solid transparent',alignSelf:'center', height: '40px',width:'50px', };
 
 exports.buttonStyle = buttonStyle;
 
@@ -6,7 +6,7 @@ const msgbarIcon = { width:'25px',
 height:'25px',
 color:'grey',
 alignSelf:'center',
-paddingLeft:'10px'
+padding:'10px'
 }
 
 exports.msgbarIcon=msgbarIcon;
@@ -20,14 +20,14 @@ const msgBarStyle = {width:'inherit',
 
  exports.msgBarStyle=msgBarStyle;
  
- const formStyle = { display: 'flex', 
- flex: 12, 
- alignSelf: 'center', 
+ const formStyle = {
+ flex: 1, 
  width: '95%', 
- height: '90%' };
+ height: '90%',
+padding:'10px'};
 
  exports.formStyle =formStyle;
 
- const micStyle = { flex: 1, padding: '10px', ...msgbarIcon };
+ const micStyle = { padding: '10px', ...msgbarIcon };
 
  exports.micStyle =micStyle;

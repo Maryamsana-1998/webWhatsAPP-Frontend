@@ -1,5 +1,4 @@
-const barStyle ={width:'100%',
-flex:1, 
+const barStyle ={width:'100%',height: '59px',
 backgroundColor: '#ededed',border:  '2px #0000000d',
 display: 'flex',
 flexDirection:'row'
@@ -9,7 +8,7 @@ exports.barStyle = barStyle;
 
 const imgStyle ={borderRadius:'30px',
 width:'40px',
-height:'45px',
+height:'40px',
 padding:'10px',
 borderColor:'#80808069'};
 
@@ -36,9 +35,9 @@ exports.notbarIcon= notbarIcon;
 
 const iconStyle ={ width:'25px',
 height:'25px',
-paddingTop:'20px',
-paddingLeft: '8%',
+padding: '10px',
 color:'grey',
+alignSelf:'center'
 };
 
 exports.iconStyle=iconStyle;

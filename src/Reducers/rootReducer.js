@@ -12,7 +12,7 @@ const rootReducer = (state = initState, action) => {
         return newS
     }
 
-    if(action.type =='DISPLAY_SETTINGS'){
+    if(action.type ==='DISPLAY_SETTINGS'){
         const newS = {...state,settings : action.value};
         return newS
     }
