@@ -2,7 +2,7 @@ const mainStyle = { display: 'flex', flexDirection: 'column', height: '100%' };
 
 exports.mainStyle =mainStyle;
 
-const mystyle = require('../MainStyles');
+const mystyle = require('../../MainStyles');
 
 const contbar = { display: 'flex', flexDirection: 'row', flex: 1, ...mystyle.barStyle };
 

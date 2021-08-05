@@ -4,22 +4,17 @@ import { BsMicFill } from "react-icons/bs"
 import React ,{useState} from "react";
 
 const MessageBar = (props) => {
-    const mystyle = require('../MainStyles');
     const msgstyle = require('./styles/MessageBarStyles');
     const [message,setMessage] =useState('');
 
     return (
         <>
-            <button name='attach'
-                style={msgstyle.buttonStyle}
-                onClick={props.attach} >
+            <button name='attach'  style={msgstyle.buttonStyle} onClick={props.attach} >
                <ImAttachment style={msgstyle.msgbarIcon}>
                </ImAttachment>
             </button>
 
-            <button name='emoji'
-                style={msgstyle.buttonStyle}
-                onClick={props.emoji} >
+            <button name='emoji' style={msgstyle.buttonStyle} onClick={props.emoji} >
                 <GrEmoji style={msgstyle.msgbarIcon}>
                 </GrEmoji>
             </button>

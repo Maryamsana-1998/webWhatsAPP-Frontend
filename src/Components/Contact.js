@@ -3,7 +3,7 @@ import { BiDotsVerticalRounded } from "react-icons/bi";
 import React from 'react';
 
 const Contact = (props) => {
-    mystyle = require('../MainStyles');
+    const mystyle = require('../MainStyles');
     return (
         <>
             <div style={{ flex: 1 }}>

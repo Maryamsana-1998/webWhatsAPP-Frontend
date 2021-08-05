@@ -17,3 +17,30 @@ display: 'flex',
 flexDirection: 'column' };
 
 exports.chatbox=chatbox;
+
+const buttonStyle ={ flex: 1, 
+border: '1px solid transparent' };
+
+exports.buttonStyle =buttonStyle;
+
+const notIcon ={ width:'25px',
+height:'25px',
+paddingLeft: '8%',
+color:'grey',
+};
+
+exports.notIcon=notIcon;
+
+const settingbar = { flex: 3,
+zIndex: 5, 
+backgroundColor: 'white',
+border:  '2px #0000000d',
+display: 'flex',
+flexDirection:'column', 
+width: '30px' };
+
+exports.settingbar =settingbar;
+
+const txtstyle = {flex:1,color :'grey', textAlign:'center',fontSize:'12px'};
+
+exports.txtstyle =txtstyle;

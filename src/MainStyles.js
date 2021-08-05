@@ -5,7 +5,6 @@ display: 'flex',
 flexDirection:'row'
 };
 
-
 exports.barStyle = barStyle;
 
 const imgStyle ={borderRadius:'30px',
@@ -107,4 +106,18 @@ borderRadius:'500px',
 alignSelf:'center'};
 
 exports.backdropimgStyle = backdropimgStyle; 
+
+const mainbackStyle = {
+    position: 'absolute',
+    height: '100vh',
+    width: '100%',
+    top: 0,
+    zIndex: 1,
+    backgroundColor: 'transparent',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  };
+
+  exports.mainbackStyle = mainbackStyle;
 
