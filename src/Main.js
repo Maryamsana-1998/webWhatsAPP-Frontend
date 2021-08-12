@@ -5,6 +5,7 @@ import ChatBackdrop from './Components/chatBackdrop';
 import {connect} from 'react-redux';
 
 const Main = (props) => {
+  const userId = 1;
   useEffect(()=>{
    console.log('everytime props changeds')
    console.log(props.id)
@@ -14,11 +15,11 @@ const Main = (props) => {
     <div style={{ backgroundColor: '#dddbd1', margin: 10, height: '95vh', width: '90vw', display: 'flex', flexDirection: 'row' }}>
 
       <div style={{ flex: 1, backgroundColor: 'white' }}>
-        <NavBar ></NavBar>
+        <NavBar user={userId} ></NavBar>
       </div>
 
       <div style={{flex: 3, backgroundColor: '#e5ddd5' }}>
-        {props.id === 0? <ChatBackdrop></ChatBackdrop> : <Chat id ={props.id} ></Chat> }
+        {props.id === 0 || props.id === userId ? <ChatBackdrop></ChatBackdrop> : <Chat id ={props.id} ></Chat> }
       </div>
 
     </div>
@@ -27,7 +28,7 @@ const Main = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    id: state.selectedChat
+    id: state.display.selectedChat
   }
 }
 
