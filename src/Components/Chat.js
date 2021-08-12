@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import EmojiBar from './EmojiBar';
 import AttachBar from './AttachBar';
 import useFetch from '../useFetch'
+import Mchat from './Mchat';
+import Message from './Message';
 
 
 const Chat = (props) => {
@@ -13,15 +15,19 @@ const Chat = (props) => {
   const [seen, setSeen] = useState(' ');
   const [displayEmoji, setEmoji] = useState(false);
   const [displayAttach, setAttach] = useState(false);
+  const [data,setData] =useState('');
+  console.log(props.id)
 
-  const { data: contact, error, isPending } = useFetch(' http://localhost:8000/chats/' + props.id);
+  const { data: contact, error, isPending } =  useFetch('http://localhost:8000/api/users/' + props.id);
 
   useEffect(() => {
     console.log('chat changed')
-    console.log(contact)
+    
     if (contact !== null) {
-      setSeen(contact.lastseen)
-      setName(contact.title)
+      //console.log(contact[0])
+      setSeen(contact[0].Lastseen.slice(11,19))
+      setName(contact[0].Name)
+      setData(contact[0])
     }
   }, [props.id, contact])
 
@@ -47,9 +53,11 @@ const Chat = (props) => {
 
       <div style={chstyle.chat}>
 
-        <div style={{ flex: 7 }}></div>
+        <div style={{ flex: 1}}>
+          <Mchat name = {name.slice(0,6)}></Mchat>
+        </div>
 
-        {displayAttach && <AttachBar></AttachBar>}
+        {displayAttach && <AttachBar class='attachbar'></AttachBar>}
 
         {displayEmoji && <div style={mystyle.emojiBarStyle}>
           <EmojiBar></EmojiBar>
@@ -58,7 +66,7 @@ const Chat = (props) => {
       </div>
 
       <div style={mystyle.barStyle}>
-        <MessageBar emoji={handleEMojiClick} attach={handleAttachClick} ></MessageBar>
+        <MessageBar chat ={data} emoji={handleEMojiClick} attach={handleAttachClick} ></MessageBar>
       </div>
 
     </ div>

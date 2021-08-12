@@ -20,7 +20,7 @@ const NavChat = (props) => {
             </div>
 
             <div style={{ flex: 1 }}>
-                <p style={mystyle.lastseenStyle}>{lastseen}</p>
+                <p style={mystyle.lastseenStyle}>{lastseen.slice(11,19)}</p>
             </div>
 
         </div>
