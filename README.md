@@ -1,5 +1,8 @@
 # WebWhatsAPP FRONTEND with React & Redux Thunk
 
+Application preview 
+![preview](whatsapp_preview.PNG)
+
 This app contains a simple frontend of web.whatsapp connected with a nodejs service.
 In to order run backend nodes js service follow this repository
 
