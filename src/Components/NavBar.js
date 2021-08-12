@@ -5,6 +5,7 @@ import useFetch from '../useFetch';
 import Navprofile from "./Navprofile";
 import Navsub from "./Navsub";
 import {fetchUsers} from "../Redux/users/userActions";
+import { timeout } from "async";
 
 const NavBar = (props) => {
   const mystyle = require('../MainStyles');
@@ -16,10 +17,10 @@ const NavBar = (props) => {
     props.fetchUsers()
     console.log(props.userData);
     if(props.userData !== null){
-      setData(props.userData);
-      setPending(false);
+    setData(props.userData);
+    setPending(false);
     }
-   },[])
+   },[props.userData])
 
   const handleClickChat = (id)=>{
     console.log('chat is clicked')

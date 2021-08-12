@@ -25,7 +25,7 @@ const Mchat = (props) => {
 
     <div  style ={{width:'inherit',height:'inherit',display:'flex',flexDirection:'column'}}>
      {!pending && message.map((m, index)=>(<div>
-         <Message content = {m.MessageContent} key={index}></Message>
+         <Message id ={m.SenderID} content = {m.MessageContent} key={index} style ={{alignSelf: m.SenderID ===1? 'flex-end':'flex-start'}}></Message>
      </div>)) }
 
     </div> );
