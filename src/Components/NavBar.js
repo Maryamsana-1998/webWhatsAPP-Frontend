@@ -1,7 +1,6 @@
 import NavChat from "./NavChat";
 import {connect} from "react-redux";
 import React,{useState,useEffect} from "react";
-import useFetch from '../useFetch';
 import Navprofile from "./Navprofile";
 import Navsub from "./Navsub";
 import {fetchUsers} from "../Redux/users/userActions";
@@ -20,7 +19,7 @@ const NavBar = (props) => {
     setData(props.userData);
     setPending(false);
     }
-   },[props.userData])
+   },[])
 
   const handleClickChat = (id)=>{
     console.log('chat is clicked')

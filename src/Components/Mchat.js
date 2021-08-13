@@ -1,25 +1,23 @@
 import Message from "./Message";
-import useFetch from "../useFetch";
 import { useState ,useEffect} from "react";
+import { fetchMsgs } from '../Redux/messages/msgActions';
+import {connect} from "react-redux";
 
 
 const Mchat = (props) => {
     const [message,setMessage] = useState('');
     const [pending,setPending] = useState(true);
     const url = 'http://localhost:8000/api/users/chat/' + props.name;
-
-    const { data, error, isPending } =  useFetch(url);
     
     useEffect(() => {
-        console.log('chat changed')
-        console.log(url)
-        
-        if (data !== null) {
-          setMessage(data);
+        props.fetchMsgs(url)
+        console.log(props.msgData)
+        if (props.msgData !== null) {
+          setMessage(props.msgData);
           setPending(false);
           console.log(message)
         }
-      }, [props.name,data])
+      }, [props.name])
 
     return ( 
 
@@ -30,5 +28,17 @@ const Mchat = (props) => {
 
     </div> );
 }
- 
-export default Mchat;
+
+const mapStateToProps = state => {
+  return {
+    msgData: state.messages.msg
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchMsgs: (url) => dispatch(fetchMsgs(url))
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Mchat);

@@ -3,10 +3,9 @@ import MessageBar from './MessageBar';
 import React, { useState, useEffect } from 'react';
 import EmojiBar from './EmojiBar';
 import AttachBar from './AttachBar';
-import useFetch from '../useFetch'
 import Mchat from './Mchat';
 import Message from './Message';
-
+import {connect} from "react-redux";
 
 const Chat = (props) => {
   const mystyle = require('../MainStyles');
@@ -18,18 +17,16 @@ const Chat = (props) => {
   const [data,setData] =useState('');
   console.log(props.id)
 
-  const { data: contact, error, isPending } =  useFetch('http://localhost:8000/api/users/' + props.id);
 
   useEffect(() => {
-    console.log('chat changed')
-    
-    if (contact !== null) {
-      //console.log(contact[0])
-      setSeen(contact[0].Lastseen.slice(11,19))
-      setName(contact[0].Name)
-      setData(contact[0])
+
+    if (props.contact !== null) {
+
+      setSeen(props.contact[props.id -1].Lastseen.slice(11,19))
+      setName(props.contact[props.id -1].Name)
+      setData(props.contact[props.id -1])
     }
-  }, [props.id, contact])
+  }, [props.id])
 
   const handleEMojiClick = () => {
     setEmoji(!displayEmoji);
@@ -73,4 +70,10 @@ const Chat = (props) => {
   );
 }
 
-export default Chat;
+const mapStateToProps = state => {
+  return {
+    contact : state.users.users
+  }
+}
+
+export default connect(mapStateToProps)(Chat);
