@@ -6,8 +6,6 @@ const NavChat = (props) => {
     var mystyle = require('../MainStyles');
     const name = props.name;
     const lastseen =props.lastseen;
-    //const picture = require(String(props.pic))
-    
 
     return (
         <div style ={mystyle.navChatStyle}>

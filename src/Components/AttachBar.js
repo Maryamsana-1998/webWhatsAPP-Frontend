@@ -2,21 +2,19 @@ import {BsFillImageFill} from  'react-icons/bs';
 import {IoMdDocument,IoMdContact} from 'react-icons/io';
 import {FaCamera} from 'react-icons/fa';
 
-
-
 function AttachBar(){
-    var attstyle = require('./styles/AttachStyle');
+    var style = require('./styles/AttachStyle');
 
     return(
-        <div style = {attstyle.mainStyle}>
+        <div style = {style.mainStyle}>
 
-            <BsFillImageFill style={attstyle.imgIcon}></BsFillImageFill>
+            <BsFillImageFill style={style.imgIcon}></BsFillImageFill>
 
-            <FaCamera style={attstyle.camIcon}></FaCamera>
+            <FaCamera style={style.camIcon}></FaCamera>
 
-            <IoMdDocument  style={attstyle.docIcon}></IoMdDocument>
+            <IoMdDocument  style={style.docIcon}></IoMdDocument>
 
-            <IoMdContact  style={attstyle.contIcon}></IoMdContact>
+            <IoMdContact  style={style.contIcon}></IoMdContact>
         
         </div>
     )

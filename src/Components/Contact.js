@@ -6,9 +6,7 @@ const Contact = (props) => {
     const mystyle = require('../MainStyles');
     return (
         <>
- 
             <img src={picture} alt="contact picture " style={mystyle.imgStyle}></img>
-           
 
             <div style={{ flex: 1 }}>
                 <p style={mystyle.contactStyle}>{props.name}</p>
@@ -16,9 +14,8 @@ const Contact = (props) => {
             </div>
 
             <BiDotsVerticalRounded style={mystyle.iconStyle}></BiDotsVerticalRounded>
-            
         </>
     );
 }
- 
+
 export default Contact;
